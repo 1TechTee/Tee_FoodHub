@@ -193,10 +193,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
             decoration: const BoxDecoration(
               color: primaryColor,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(24),
-                topRight: Radius.circular(24),
-              ),
+             
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,

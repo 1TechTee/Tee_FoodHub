@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tee/main.dart';
 import 'cart.dart';
 import 'favorite.dart';
 
@@ -60,7 +61,7 @@ class ProfilePage extends StatelessWidget {
             style: TextStyle(
               fontFamily: 'Poppins',
               fontSize: 14,
-              color: Colors.black54,
+              color: themeColor,
             ),
           ),
           const SizedBox(height: 25),
@@ -86,15 +87,20 @@ class ProfilePage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
         decoration: const BoxDecoration(
           color: Color(0xFF75070C),
-          borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(24),
-            topRight: Radius.circular(24),
-          ),
+          
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            _buildNavIcon(Icons.home, true),
+           GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const HomePage()),
+                );
+              },
+              child: _buildNavIcon(Icons.home, false),
+            ),
             
             GestureDetector(
               onTap: () {
@@ -122,7 +128,7 @@ class ProfilePage extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => const ProfilePage()),
               ),
-              child: _buildNavIcon(Icons.person, false),
+              child: _buildNavIcon(Icons.person, true),
             ),
           ],
         ),
